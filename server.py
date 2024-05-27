@@ -57,7 +57,7 @@ def get_average_ratings():
 
         for row in results:
             location_data.append({
-                "neighborhood_name": row['neighborhood_name'],
+                "neighbourhood": row['neighborhood_name'],
                 "average_rating": row['average_rating'],
                 "average_price": row['average_price'],
                 "longitude": row['longitude'],

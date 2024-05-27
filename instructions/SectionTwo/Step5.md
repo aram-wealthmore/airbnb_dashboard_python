@@ -1,5 +1,17 @@
 # Section Two: Data Processing
 
+## Table of Contents
+
+- [Step 5: Create Flask Endpoints to Access Data](#step-5-create-flask-endpoints-to-access-data)
+  - [Goals](#goals)
+  - [Prerequisites](#prerequisites)
+  - [Step-by-Step Instructions](#step-by-step-instructions)
+    - [1. Update `server.py` to Load GeoJSON Data](#1-update-serverpy-to-load-geojson-data)
+    - [2. Create the `/locations/average` Endpoint Function](#2-create-the-locationsaverage-endpoint-function)
+    - [3. Add Explanatory Comments and Error Handling](#3-add-explanatory-comments-and-error-handling)
+    - [4. Test the Endpoint](#4-test-the-endpoint)
+  - [Summary](#summary)
+
 ## Step 5: Create Flask Endpoints to Access Data
 
 In this step, we will create a Flask API endpoint that queries the PostgreSQL database and returns the average review scores and average prices for neighborhoods. This data will be served at the endpoint `GET /locations/average`.
@@ -115,7 +127,7 @@ def get_average_ratings():
 
         for row in results:
             location_data.append({
-                "neighborhood_name": row['neighborhood_name'],
+                "neighbourhood": row['neighborhood_name'], # Note: Our GeoJSON uses 'neighbourhood' instead of 'neighborhood_name', so for now we will accommodate this difference by returning 'neighbourhood' instead of 'neighborhood_name'.
                 "average_rating": row['average_rating'],
                 "average_price": row['average_price']
             })
@@ -201,7 +213,7 @@ def get_average_ratings():
         location_data = []
         for row in results:
             location_data.append({
-                "neighborhood_name": row['neighborhood_name'],
+                "neighbourhood": row['neighborhood_name'], # Note: Our GeoJSON uses 'neighbourhood' instead of 'neighborhood_name', so for now we will accommodate this difference by returning 'neighbourhood' instead of 'neighborhood_name'.
                 "average_rating": row['average_rating'],
                 "average_price": row['average_price'],
                 "longitude": row['longitude'],
@@ -219,7 +231,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-This code includes detailed comments explaining each part of the function, handles potential errors during the query execution, and processes the query results.
+This code includes detailed comments explaining each part of the function, handles potential errors during the query execution, and processes the query results. Pay attention to the code comments to see how the data is processed and returned.
 
 #### 4. Test the Endpoint
 
