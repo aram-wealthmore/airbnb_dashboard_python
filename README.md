@@ -109,26 +109,21 @@ Follow the steps in the `instructions` folder in order to build the project from
 
 ### Section One: Initial Setup
 
+Branch Example: [section_one](https://github.com/aram-wealthmore/airbnb_dashboard_python/tree/section_one)
+
 1. Step 1: Hello World - Server Bootstrap.
-   - Branch: `step_1_hello_world_bootstrap`
 2. Step 2: Create a PostgreSQL database.
-   - Branch: `step_2_create_postgres_database`
 3. Step 3: Hello World - Dash / Plotly Dashboard Bootstrap.
-   - Branch: `step_3_hello_world_dash_plotly_dashboard_bootstrap`
 
 ### Section Two: Data Processing
 
 4. Step 4: Load Data into PostgreSQL.
-   - Branch: `step_4_load_data_into_postgres`
 5. Step 5: Create Flask Endpoints to Access Data.
-   - Branch: `step_5_create_flask_endpoints`
 6. Step 6: Create Average Review Map in Dash.
-   - Branch: `step_6_create_average_review_map`
 
 ### Section Three: Additional Features
 
 7. Step 7: TBD.
-   - Branch: `step_7_tbd`
 
 ## Running this Project
 
