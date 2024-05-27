@@ -1,0 +1,7 @@
+dash
+flask
+sqlalchemy
+psycopg2-binary
+pandas
+geopandas
+geojson
