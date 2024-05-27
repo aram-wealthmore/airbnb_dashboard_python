@@ -1,5 +1,21 @@
 # Section One: Initial Setup
 
+## Table of Contents
+
+## Table of Contents
+
+- [Section One: Initial Setup](#section-one-initial-setup)
+- [Goals](#goals)
+- [Prerequisites](#prerequisites)
+- [Step-by-Step Instructions](#step-by-step-instructions)
+    - [1. Create the Project Directory](#1-create-the-project-directory)
+    - [2. Set Up a Virtual Environment using VS Code](#2-set-up-a-virtual-environment-using-vs-code)
+    - [3. (Optional) Install Required Packages](#3-optional-install-required-packages)
+    - [4. Create the Flask Application](#4-create-the-flask-application)
+    - [5. Run the Flask Server](#5-run-the-flask-server)
+    - [6. Verify the Server](#6-verify-the-server)
+- [Summary](#summary)
+
 ## Step 1: Hello World - Server Bootstrap
 
 In this step, we will set up a basic Flask server to ensure everything is working correctly before we dive deeper into the project. This initial setup will lay the foundation for our AirBnB Dashboard by establishing a server that will later interact with our PostgreSQL database and Dash frontend.

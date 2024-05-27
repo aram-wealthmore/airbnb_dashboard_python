@@ -1,5 +1,18 @@
 # Section One: Initial Setup
 
+## Table of Contents
+
+- [Section One: Initial Setup](#section-one-initial-setup)
+  - [Table of Contents](#table-of-contents)
+  - [Step 2: Create a PostgreSQL Database](#step-2-create-a-postgresql-database)
+    - [Goals](#goals)
+    - [Prerequisites](#prerequisites)
+    - [Step-by-Step Instructions](#step-by-step-instructions)
+      - [1. Create a Docker Compose File](#1-create-a-docker-compose-file)
+      - [2. Start the PostgreSQL Database](#2-start-the-postgresql-database)
+      - [3. Verify the Database](#3-verify-the-database)
+    - [Summary](#summary)
+
 ## Step 2: Create a PostgreSQL Database
 
 In this step, we will set up a PostgreSQL database using Docker. This database will store our AirBnB dataset, which will be accessed and processed by our Flask server and displayed on the Dash frontend.
