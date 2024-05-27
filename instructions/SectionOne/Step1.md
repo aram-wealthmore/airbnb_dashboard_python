@@ -2,9 +2,7 @@
 
 ## Table of Contents
 
-## Table of Contents
-
-- [Section One: Initial Setup](#section-one-initial-setup)
+- [Step 1: Hello World - Server Bootstrap](#step-1-hello-world---server-bootstrap)
 - [Goals](#goals)
 - [Prerequisites](#prerequisites)
 - [Step-by-Step Instructions](#step-by-step-instructions)
