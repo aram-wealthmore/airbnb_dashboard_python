@@ -105,7 +105,11 @@ If everything is set up correctly, you should see output indicating that the ser
 
 #### 6. Verify the Server
 
-Open your web browser and navigate to `http://127.0.0.1:5000/`. You should see the message "Hello, World!" displayed in your browser.
+Open your web browser and navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/). You should see the message "Hello, World!" displayed in your browser.
+
+Congratulations! You have successfully set up a basic Flask server. You can close the server by pressing `Ctrl + C` in the terminal.
+
+**_TIP_**: Unlike Jupyter notebooks, you now have a persistent server running in the background. If you make changes to your code, you will need to restart the server to see the changes reflected in your browser.
 
 ### Summary
 
