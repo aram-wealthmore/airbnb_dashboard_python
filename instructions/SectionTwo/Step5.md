@@ -193,7 +193,9 @@ def get_average_ratings():
             location_data.append({
                 "neighborhood_name": row['neighborhood_name'],
                 "average_rating": row['average_rating'],
-                "average_price": row['average_price']
+                "average_price": row['average_price'],
+                "longitude": row['longitude'],
+                "latitude": row['latitude']
             })
 
         # Return the data along with the GeoJSON
