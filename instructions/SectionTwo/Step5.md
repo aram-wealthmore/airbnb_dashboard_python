@@ -162,9 +162,11 @@ def get_average_ratings():
         return jsonify({"error": "GeoJSON data not found"}), 500
 
     # SQL query to get average rating and price per neighborhood
-    get_average_ratings_query = """
+    get_average_ratings_query =  """
     SELECT
         loc.neighborhood_name,
+        loc.longitude,
+        loc.latitude,
         AVG(l.review_scores_rating) AS average_rating,
         AVG(l.price) AS average_price
     FROM
@@ -174,7 +176,9 @@ def get_average_ratings():
     ON
         l.location_id = loc.location_id
     GROUP BY
-        loc.neighborhood_name
+        loc.neighborhood_name,
+        loc.longitude,
+        loc.latitude
     ORDER BY
         loc.neighborhood_name;
     """

@@ -31,6 +31,8 @@ def get_average_ratings():
     get_average_ratings_query = """
     SELECT 
         loc.neighborhood_name,
+        loc.longitude,
+        loc.latitude,
         AVG(l.review_scores_rating) AS average_rating,
         AVG(l.price) AS average_price
     FROM
@@ -40,7 +42,9 @@ def get_average_ratings():
     ON
         l.location_id = loc.location_id
     GROUP BY
-        loc.neighborhood_name
+        loc.neighborhood_name,
+        loc.longitude,
+        loc.latitude
     ORDER BY
         loc.neighborhood_name;
     """
@@ -55,7 +59,9 @@ def get_average_ratings():
             location_data.append({
                 "neighborhood_name": row['neighborhood_name'],
                 "average_rating": row['average_rating'],
-                "average_price": row['average_price']
+                "average_price": row['average_price'],
+                "longitude": row['longitude'],
+                "latitude": row['latitude']
             })
 
         return jsonify({"data": location_data, "geojson": geojson_data})
