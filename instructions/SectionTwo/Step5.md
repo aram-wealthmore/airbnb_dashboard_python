@@ -89,8 +89,10 @@ def get_average_ratings():
     get_average_ratings_query = """
     SELECT
         loc.neighborhood_name,
-        AVG(l.review_scores_rating) AS average_rating,
-        AVG(l.price) AS average_price
+        loc.longitude,
+        loc.latitude,
+        AVG(l.average_ratings) AS average_rating,
+        AVG(CASE WHEN NOT l.price IS NULL AND NOT l.price = 'NaN' THEN l.price END) AS average_price
     FROM
         listings l
     JOIN
@@ -98,7 +100,9 @@ def get_average_ratings():
     ON
         l.location_id = loc.location_id
     GROUP BY
-        loc.neighborhood_name
+        loc.neighborhood_name,
+        loc.longitude,
+        loc.latitude
     ORDER BY
         loc.neighborhood_name;
     """
@@ -127,6 +131,12 @@ if __name__ == '__main__':
 ```
 
 This code defines the function for the `/locations/average` endpoint. It starts by checking if the GeoJSON data is loaded, sets up the SQL query to get the average ratings and prices, executes the query, processes the results, and integrates them with the GeoJSON data.
+
+---
+
+**_NOTE:_** - Notice how that for average_price, we are using a `CASE` statement to handle `NULL` and `'NaN'` values. This is to ensure that we only calculate the average price for valid values. When reviewing the data for this section, I noticed that in some cases, the price was set to `'NaN'` instead of `NULL`. This is a common issue when dealing with data and it is important to handle such cases to avoid errors in calculations. We will come back and clean this data in a future section.
+
+---
 
 #### 3. Add Explanatory Comments and Error Handling
 
@@ -162,13 +172,13 @@ def get_average_ratings():
         return jsonify({"error": "GeoJSON data not found"}), 500
 
     # SQL query to get average rating and price per neighborhood
-    get_average_ratings_query =  """
+    get_average_ratings_query = """
     SELECT
         loc.neighborhood_name,
         loc.longitude,
         loc.latitude,
-        AVG(l.review_scores_rating) AS average_rating,
-        AVG(l.price) AS average_price
+        AVG(l.average_ratings) AS average_rating,
+        AVG(CASE WHEN NOT l.price IS NULL AND NOT l.price = 'NaN' THEN l.price END) AS average_price
     FROM
         listings l
     JOIN

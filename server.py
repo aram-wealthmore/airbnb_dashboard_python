@@ -33,8 +33,8 @@ def get_average_ratings():
         loc.neighborhood_name,
         loc.longitude,
         loc.latitude,
-        AVG(l.review_scores_rating) AS average_rating,
-        AVG(l.price) AS average_price
+        AVG(l.average_ratings) AS average_rating,
+        AVG(CASE WHEN NOT l.price IS NULL AND NOT l.price = 'NaN' THEN l.price END) AS average_price
     FROM
         listings l
     JOIN
@@ -65,7 +65,6 @@ def get_average_ratings():
             })
 
         return jsonify({"data": location_data, "geojson": geojson_data})
-
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": str(e)}), 500
