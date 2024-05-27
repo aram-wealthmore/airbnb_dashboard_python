@@ -2,16 +2,20 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
-- [Repo Setup / Package Installation](#repo-setup--package-installation)
-- [Steps](#steps)
-  - [Section One: Initial Setup](#section-one-initial-setup)
-  - [Section Two: Data Processing](#section-two-data-processing)
-  - [Section Three: Additional Features](#section-three-additional-features)
-- [Running this Project](#running-this-project)
-- [Conclusion](#conclusion)
-- [Additional Resources](#additional-resources)
+- [AirBnB Dashboard](#airbnb-dashboard)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Repo Setup / Package Setup](#repo-setup--package-setup)
+  - [Installation](#installation)
+  - [Tutorial Steps](#tutorial-steps)
+    - [Section One: Initial Setup](#section-one-initial-setup)
+    - [Section Two: Data Processing](#section-two-data-processing)
+    - [Section Three: Additional Features](#section-three-additional-features)
+  - [Running this Project](#running-this-project)
+  - [Conclusion](#conclusion)
+  - [Additional Resources](#additional-resources)
 
 ## Introduction
 
@@ -27,6 +31,19 @@ In this project, we are building a dashboard from an already processed AirBnB da
   - A map of Denver with the neighborhoods colored by the average review will be the primary feature.
   - TBD: Other features to be added
 
+## Getting Started
+
+If you are looking to run this app yourself, follow the steps:
+
+1. [Prerequisites](#prerequisites)
+2. [Repo Setup / Package Setup](#repo-setup--package-installation)
+3. [Installation](#installation)
+4. [Running this Project](#running-this-project)
+
+If you are looking to follow the tutorial, follow the steps:
+
+1. [Tutorial Steps](#tutorial-steps)
+
 ## Prerequisites
 
 - Python 3.7 or higher
@@ -41,26 +58,20 @@ In this project, we are building a dashboard from an already processed AirBnB da
   - [VS Code Installation](https://code.visualstudio.com/download)
 - TablePlus
   - [TablePlus Installation](https://tableplus.com/)
+- Homebrew (MacOS)
+  - [Homebrew Installation](https://brew.sh/)
 
-## Repo Setup / Package Installation
+## Repo Setup / Package Setup
 
 For this project, each branch will provide an example of the code at a specific step in the tutorial. However, you will be building the project from scratch and will only be downloading the folder `/seed` to get the initial data.
 
-1. Create a new repository on GitHub and clone it to your local machine.
-   - Create a new repository on GitHub.
-   - Clone the repository to your local machine:
-     ```bash
-     # Clone the repository
-     git clone `github-repo-url`
-     ```
-   - Change the directory to the repository:
-     ```bash
-     # Change the directory
-     cd `repository-name`
-     ```
-2. Download the `/seed` folder from the GitHub repository and place it in the root of your project.
-   - Seed URL: [AirBnB Dashboard Seed](https://example.com) // TODO: Update with the correct link.
-3. Create a virtual environment for the project.
+Download the `/seed` folder from the GitHub repository and place it in the root of your project.
+
+- Seed URL: [AirBnB Dashboard Seed](https://example.com) // TODO: Update with the correct link.
+
+## Installation
+
+1. Create a virtual environment for the project.
    - Creating a virtual environment in VS Code:
      - Open the command palette (Ctrl + Shift + P).
      - Type `Python: Select Interpreter`.
@@ -68,22 +79,23 @@ For this project, each branch will provide an example of the code at a specific 
      - Choose a location for the virtual environment.
      - Select the Python version (3.7 or higher).
      - Select the virtual environment as the interpreter.
-4. Create a `requirements.txt` file in the root of the project.
+2. Create a `requirements.txt` file in the root of the project.
    - Run the following command in the terminal:
      ```bash
      # Create a requirements.txt file
-     pip freeze > requirements.txt
+     touch requirements.txt
      ```
    - Add the following packages to the `requirements.txt` file:
      ```txt
      dash
      flask
-     psycopg2
+     sqlalchemy
+     psycopg2-binary
      pandas
      geopandas
      geojson
      ```
-5. Install the required packages from the `requirements.txt` file.
+3. Install the required packages from the `requirements.txt` file.
    - Run the following command in the terminal:
      ```bash
      # Install from requirements.txt
@@ -91,7 +103,7 @@ For this project, each branch will provide an example of the code at a specific 
      ```
    - By saving all of your package requirements in a `requirements.txt` file, you can easily install all of the packages in a new environment by running the command above, and allow others to install the same packages in their environment. This will ensure that everyone is using the same versions of the packages and that the project will run correctly.
 
-## Steps
+## Tutorial Steps
 
 Follow the steps in the `instructions` folder in order to build the project from scratch. Each step will build on the previous step and will provide a new feature or functionality to the project. If you get stuck, you can refer to the branches in the repository to see the code at each step.
 
@@ -130,7 +142,7 @@ docker-compose up -d
 python server.py
 
 # Start the Dash app
-python app.py
+python dashboard.py
 ```
 
 Once the commands have been run, you can access the dashboard by going to `http://localhost:8050/` in your web browser. If you see the dashboard, then the project is working correctly and you have the proper prerequisites installed to build this on your own. If you are having trouble, please refer to the branches in the repository to see the code at each step.

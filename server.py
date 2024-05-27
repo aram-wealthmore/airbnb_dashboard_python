@@ -1,4 +1,4 @@
-# app.py
+# server.py
 
 from flask import Flask
 

@@ -70,10 +70,10 @@ pip install -r requirements.txt
 
 #### 4. Create the Flask Application
 
-Create a new file named `app.py` in your project directory. This file will contain the code for our Flask server.
+Create a new file named `server.py` in your project directory. This file will contain the code for our Flask server.
 
 ```python
-# app.py
+# server.py
 
 from flask import Flask
 
@@ -94,7 +94,7 @@ This code sets up a basic Flask server that returns "Hello, World!" when you vis
 Run the Flask server to ensure everything is working correctly.
 
 ```bash
-python app.py
+python server.py
 ```
 
 If everything is set up correctly, you should see output indicating that the server is running:
