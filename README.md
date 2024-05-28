@@ -33,6 +33,18 @@ In this project, we are building a dashboard from an already processed AirBnB da
 
 ## Getting Started
 
+---
+
+**_TIP_**- This tutorial uses markdown files to provide instructions and explanations for each step. You can find the markdown files in the `instructions` folder. Be sure to use a markdown viewer to see the content in a readable format.
+
+To do this in VS Code:
+
+- Open the palette (Ctrl + Shift + P)
+- Type `Markdown: Open Preview`
+- Select the option to open the preview to the side or as a full screen
+
+---
+
 If you are looking to run this app yourself, follow the steps:
 
 1. [Prerequisites](#prerequisites)
@@ -94,14 +106,28 @@ Download the `/seed` folder from the GitHub repository and place it in the root 
      pandas
      geopandas
      geojson
+     python-dotenv
      ```
 3. Install the required packages from the `requirements.txt` file.
+
    - Run the following command in the terminal:
      ```bash
      # Install from requirements.txt
      pip install -r requirements.txt
      ```
    - By saving all of your package requirements in a `requirements.txt` file, you can easily install all of the packages in a new environment by running the command above, and allow others to install the same packages in their environment. This will ensure that everyone is using the same versions of the packages and that the project will run correctly.
+
+4. Create a .env file and add the following properties:
+
+```ini
+DB_NAME=your_db_name
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_HOST=localhost
+DB_PORT=5432
+```
+
+These should match what you have in your `docker-compose.yml` file.
 
 ## Tutorial Steps
 
@@ -117,13 +143,35 @@ Branch Example: [section_one](https://github.com/aram-wealthmore/airbnb_dashboar
 
 ### Section Two: Data Processing
 
+Branch Example: [section_two](https://github.com/aram-wealthmore/airbnb_dashboard_python/tree/section_two)
+
+
 4. Step 4: Load Data into PostgreSQL.
 5. Step 5: Create Flask Endpoints to Access Data.
 6. Step 6: Create Average Review Map in Dash.
 
 ### Section Three: Additional Features
 
-7. Step 7: TBD.
+7. Step 7: Refactoring
+
+- Abstract server file into routes and controllers.
+- Abstract dashboard file into UI components.
+- Fix bugs, dynamically fetch GeoJSON data, and clean up the SQL database.
+
+8. Step 8: Add New Features
+
+- Add a migration system.
+- Add city field to the locations table.
+- Implement city search feature in the UI.
+- Add new UI graphs and data analytical tools.
+- Write scripts to fetch, process, and insert new data into the database.
+
+9. Step 9: Deployment
+
+- Prepare for deployment (update configuration, containerize application).
+- Choose a deployment platform.
+- Deploy the application.
+- Verify the deployment.
 
 ## Running this Project
 

@@ -1,5 +1,13 @@
 # Conclusion
 
+## Table of Contents
+
+- [Section One: Initial Setup](#section-one-initial-setup)
+  - [Key Achievements](#key-achievements)
+  - [Skills Acquired](#skills-acquired)
+  - [Next Steps](#next-steps)
+  - [Final Thoughts](#final-thoughts)
+
 ## Section One: Initial Setup
 
 Congratulations on completing Section One! In this section, you have laid the foundational groundwork for building a comprehensive AirBnB Dashboard application. Here's a recap of what you have achieved:
@@ -7,15 +15,18 @@ Congratulations on completing Section One! In this section, you have laid the fo
 ### Key Achievements
 
 1. **Environment Setup**:
+
    - Created a new project directory.
    - Set up and activated a virtual environment.
    - Installed necessary Python packages using `requirements.txt`.
 
 2. **Server Setup**:
+
    - Set up a basic Flask server.
    - Verified that the Flask server runs correctly and can be accessed via a web browser.
 
 3. **Database Setup**:
+
    - Configured and started a PostgreSQL database using Docker.
    - Verified that the PostgreSQL database is running and accessible.
 
