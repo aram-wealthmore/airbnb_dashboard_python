@@ -149,7 +149,26 @@ Branch Example: [section_one](https://github.com/aram-wealthmore/airbnb_dashboar
 
 ### Section Three: Additional Features
 
-7. Step 7: TBD.
+7. Step 7: Refactoring
+
+- Abstract server file into routes and controllers.
+- Abstract dashboard file into UI components.
+- Fix bugs, dynamically fetch GeoJSON data, and clean up the SQL database.
+
+8. Step 8: Add New Features
+
+- Add a migration system.
+- Add city field to the locations table.
+- Implement city search feature in the UI.
+- Add new UI graphs and data analytical tools.
+- Write scripts to fetch, process, and insert new data into the database.
+
+9. Step 9: Deployment
+
+- Prepare for deployment (update configuration, containerize application).
+- Choose a deployment platform.
+- Deploy the application.
+- Verify the deployment.
 
 ## Running this Project
 
