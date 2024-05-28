@@ -10,6 +10,7 @@
   - [2. Write Reusable Database Utility Functions](#2-write-reusable-database-utility-functions)
   - [3. Process and Load Data Using Jupyter Notebook](#3-process-and-load-data-using-jupyter-notebook)
   - [4. Verify Data in TablePlus](#4-verify-data-in-tableplus)
+- [Summary](#summary)
 
 ## Step 4: Load Data into PostgreSQL
 
@@ -163,6 +164,12 @@ def execute_batch_query(query, data):
 ```
 
 This script includes functions to connect to the database and execute queries. The `get_db_connection` function establishes a connection using credentials from the `.env` file, while the `execute_query` function runs SQL queries and handles errors, and the `execute_batch_query` function executes batch SQL queries using the `execute_batch` method from `psycopg2`.
+
+---
+
+**_NOTE_**- This is a lot of code to digest at once, but most database libraries (like pyscorpg2) have `broilerplate` like this that you can copy and paste for your utility functions.
+
+---
 
 #### 3. Process and Load Data Using Jupyter Notebook
 

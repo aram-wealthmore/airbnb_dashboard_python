@@ -50,12 +50,32 @@ def create_map(locations, geojson_data):
     return fig
 
 
+def create_table(locations, keys=[{'label': 'Test Label', 'value': 'test_value'}]):
+    """
+    Creates a table component dynamically based on the keys provided.
+    """
+    return html.Table([
+        html.Thead(
+            html.Tr([html.Th(key['label']) for key in keys])
+        ),
+        html.Tbody([
+            html.Tr([
+                html.Td(location[key['value']]) for key in keys
+            ]) for location in locations
+        ])
+    ])
+
+
 app.layout = html.Div(children=[
     html.H1(children='AirBnB Average Reviews in Denver'),
     dcc.Graph(
         id='average-review-map',
         figure=create_map(locations, geojson_data)
-    )
+    ),
+
+    # Uncomment the following line to display the table
+    create_table(locations, keys=[{'label': 'Neighbourhood', 'value': 'neighbourhood'}, {
+                                'label': 'Average Rating', 'value': 'average_rating'}, {'label': 'Average Price', 'value': 'average_price'}])
 ])
 
 if __name__ == '__main__':
